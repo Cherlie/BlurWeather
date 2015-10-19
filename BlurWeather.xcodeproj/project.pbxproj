@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60827DB0B5A38DBEE7E4F2F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E234030629C0B62E7FAF00 /* libPods.a */; };
 		956EA8A81BD09FB000298D1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8A71BD09FB000298D1B /* main.m */; };
 		956EA8AB1BD09FB000298D1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8AA1BD09FB000298D1B /* AppDelegate.m */; };
 		956EA8AE1BD09FB000298D1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8AD1BD09FB000298D1B /* ViewController.m */; };
-		956EA8B11BD09FB000298D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956EA8AF1BD09FB000298D1B /* Main.storyboard */; };
 		956EA8B31BD09FB000298D1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956EA8B21BD09FB000298D1B /* Images.xcassets */; };
-		956EA8B61BD09FB000298D1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956EA8B41BD09FB000298D1B /* LaunchScreen.xib */; };
 		956EA8C21BD09FB000298D1B /* BlurWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8C11BD09FB000298D1B /* BlurWeatherTests.m */; };
+		956EA8CE1BD0A2E500298D1B /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8CD1BD0A2E500298D1B /* WeatherCondition.m */; };
+		956EA8D11BD0A49C00298D1B /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D01BD0A49C00298D1B /* WeatherManager.m */; };
+		956EA8D41BD0A4BF00298D1B /* WeatherDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D31BD0A4BF00298D1B /* WeatherDailyForecast.m */; };
+		956EA8D81BD0A9E100298D1B /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D71BD0A9E100298D1B /* HttpClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C287D743454051ACAA16AFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		63D7F0FE4DD8889694EBC7C9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		64E234030629C0B62E7FAF00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		956EA8A21BD09FB000298D1B /* BlurWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956EA8A61BD09FB000298D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956EA8A71BD09FB000298D1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -34,12 +40,21 @@
 		956EA8AA1BD09FB000298D1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		956EA8AC1BD09FB000298D1B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		956EA8AD1BD09FB000298D1B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		956EA8B01BD09FB000298D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		956EA8B21BD09FB000298D1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		956EA8B51BD09FB000298D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		956EA8BB1BD09FB000298D1B /* BlurWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956EA8C01BD09FB000298D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956EA8C11BD09FB000298D1B /* BlurWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurWeatherTests.m; sourceTree = "<group>"; };
+		956EA8CC1BD0A2E500298D1B /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCondition.h; sourceTree = "<group>"; };
+		956EA8CD1BD0A2E500298D1B /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCondition.m; sourceTree = "<group>"; };
+		956EA8CF1BD0A49C00298D1B /* WeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
+		956EA8D01BD0A49C00298D1B /* WeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
+		956EA8D21BD0A4BF00298D1B /* WeatherDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDailyForecast.h; sourceTree = "<group>"; };
+		956EA8D31BD0A4BF00298D1B /* WeatherDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDailyForecast.m; sourceTree = "<group>"; };
+		956EA8D61BD0A9E100298D1B /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		956EA8D71BD0A9E100298D1B /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		956EA8D91BD0C63C00298D1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		956EA8DA1BD0C63C00298D1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		956EA8DB1BD0C63C00298D1B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60827DB0B5A38DBEE7E4F2F9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +76,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D0F8D08DBCA25476A56C948 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F0FE4DD8889694EBC7C9 /* Pods.debug.xcconfig */,
+				5C287D743454051ACAA16AFF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		956EA8991BD09FB000298D1B = {
 			isa = PBXGroup;
 			children = (
 				956EA8A41BD09FB000298D1B /* BlurWeather */,
 				956EA8BE1BD09FB000298D1B /* BlurWeatherTests */,
 				956EA8A31BD09FB000298D1B /* Products */,
+				7D0F8D08DBCA25476A56C948 /* Pods */,
+				BB1220DEBF0ADFCEC8B3C8EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +108,13 @@
 		956EA8A41BD09FB000298D1B /* BlurWeather */ = {
 			isa = PBXGroup;
 			children = (
+				956EA8D51BD0A99A00298D1B /* Services */,
+				956EA8CB1BD0A2BC00298D1B /* Models */,
 				956EA8A91BD09FB000298D1B /* AppDelegate.h */,
 				956EA8AA1BD09FB000298D1B /* AppDelegate.m */,
 				956EA8AC1BD09FB000298D1B /* ViewController.h */,
 				956EA8AD1BD09FB000298D1B /* ViewController.m */,
-				956EA8AF1BD09FB000298D1B /* Main.storyboard */,
 				956EA8B21BD09FB000298D1B /* Images.xcassets */,
-				956EA8B41BD09FB000298D1B /* LaunchScreen.xib */,
 				956EA8A51BD09FB000298D1B /* Supporting Files */,
 			);
 			path = BlurWeather;
@@ -119,6 +146,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		956EA8CB1BD0A2BC00298D1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				956EA8CC1BD0A2E500298D1B /* WeatherCondition.h */,
+				956EA8CD1BD0A2E500298D1B /* WeatherCondition.m */,
+				956EA8CF1BD0A49C00298D1B /* WeatherManager.h */,
+				956EA8D01BD0A49C00298D1B /* WeatherManager.m */,
+				956EA8D21BD0A4BF00298D1B /* WeatherDailyForecast.h */,
+				956EA8D31BD0A4BF00298D1B /* WeatherDailyForecast.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		956EA8D51BD0A99A00298D1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				956EA8D61BD0A9E100298D1B /* HttpClient.h */,
+				956EA8D71BD0A9E100298D1B /* HttpClient.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		BB1220DEBF0ADFCEC8B3C8EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				956EA8D91BD0C63C00298D1B /* CoreGraphics.framework */,
+				956EA8DA1BD0C63C00298D1B /* Foundation.framework */,
+				956EA8DB1BD0C63C00298D1B /* UIKit.framework */,
+				64E234030629C0B62E7FAF00 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 956EA8C51BD09FB000298D1B /* Build configuration list for PBXNativeTarget "BlurWeather" */;
 			buildPhases = (
+				4E358E0F214B95F7F9ABA1F9 /* Check Pods Manifest.lock */,
 				956EA89E1BD09FB000298D1B /* Sources */,
 				956EA89F1BD09FB000298D1B /* Frameworks */,
 				956EA8A01BD09FB000298D1B /* Resources */,
+				0DBB18B4B853D54471E2F3F1 /* Embed Pods Frameworks */,
+				44845C5ABAE2BDF1096A3F26 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,8 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956EA8B11BD09FB000298D1B /* Main.storyboard in Resources */,
-				956EA8B61BD09FB000298D1B /* LaunchScreen.xib in Resources */,
 				956EA8B31BD09FB000298D1B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,14 +275,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DBB18B4B853D54471E2F3F1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44845C5ABAE2BDF1096A3F26 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E358E0F214B95F7F9ABA1F9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		956EA89E1BD09FB000298D1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956EA8D11BD0A49C00298D1B /* WeatherManager.m in Sources */,
+				956EA8CE1BD0A2E500298D1B /* WeatherCondition.m in Sources */,
 				956EA8AE1BD09FB000298D1B /* ViewController.m in Sources */,
 				956EA8AB1BD09FB000298D1B /* AppDelegate.m in Sources */,
 				956EA8A81BD09FB000298D1B /* main.m in Sources */,
+				956EA8D81BD0A9E100298D1B /* HttpClient.m in Sources */,
+				956EA8D41BD0A4BF00298D1B /* WeatherDailyForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +355,6 @@
 			targetProxy = 956EA8BC1BD09FB000298D1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		956EA8AF1BD09FB000298D1B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				956EA8B01BD09FB000298D1B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		956EA8B41BD09FB000298D1B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				956EA8B51BD09FB000298D1B /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		956EA8C31BD09FB000298D1B /* Debug */ = {
@@ -341,8 +435,10 @@
 		};
 		956EA8C61BD09FB000298D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D7F0FE4DD8889694EBC7C9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BlurWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,8 +447,10 @@
 		};
 		956EA8C71BD09FB000298D1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C287D743454051ACAA16AFF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BlurWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +510,7 @@
 				956EA8C71BD09FB000298D1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		956EA8C81BD09FB000298D1B /* Build configuration list for PBXNativeTarget "BlurWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +519,7 @@
 				956EA8CA1BD09FB000298D1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
