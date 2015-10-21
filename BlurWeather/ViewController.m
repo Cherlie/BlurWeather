@@ -127,8 +127,14 @@
     [[RACObserve([WeatherManager sharedManager], currentCondition)
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(WeatherCondition *newCondition) {
+         UIImage* image =[UIImage imageNamed:[newCondition backgroundImage]];
+         if (image != nil) {
+             self.backgroundImageView.image = image;
+             [self.blurredImageView setImageToBlur:image blurRadius:10 completionBlock:nil];
+         }
+         
          temperatureLabel.text = [NSString stringWithFormat:@"%.0f°",newCondition.temperature.floatValue];
-         conditionsLabel.text = [newCondition.condition capitalizedString];
+         conditionsLabel.text = [newCondition.conditionDescription capitalizedString];
          cityLabel.text = [newCondition.locationName capitalizedString];
         
          iconView.image = [UIImage imageNamed:[newCondition imageName]];
@@ -148,8 +154,9 @@
     [[RACObserve([WeatherManager sharedManager], dailyForecast) deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(NSArray* newForecast) {
         [self.tableView reloadData];
     }];
-    
-    [[WeatherManager sharedManager] findCurrentLocation];
+    //定时请求数据-30s
+    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [timer fire];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -160,6 +167,10 @@
     self.backgroundImageView.frame = bounds;
     self.blurredImageView.frame = bounds;
     self.tableView.frame = bounds;
+}
+
+- (void)timerFired:(id)sender{
+    [[WeatherManager sharedManager] findCurrentLocation];
 }
 
 #pragma mark - UITableViewDataSource
@@ -191,14 +202,14 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            [self configureHeaderCell:cell title:@"Hourly Forecast"];
+            [self configureHeaderCell:cell title:NSLocalizedString(@"HourlyForecast",nil)];
         }else{
             WeatherCondition* weather = [WeatherManager sharedManager].hourlyForecast[indexPath.row -1];
             [self configureHourlyCell:cell weather:weather];
         }
     }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
-            [self configureHeaderCell:cell title:@"Daily Forecast"];
+            [self configureHeaderCell:cell title:NSLocalizedString(@"DailyForecast",nil)];
         } else {
             WeatherCondition* weather = [WeatherManager sharedManager].dailyForecast[indexPath.row - 1];
             [self configureDailyCell:cell weather:weather];

@@ -1,0 +1,10 @@
+/* 
+  Localization.strings
+  BlurWeather
+
+  Created by koudai_hs on 15-10-21.
+  Copyright (c) 2015年 Charles Wang. All rights reserved.
+*/
+
+"HourlyForecast" = "Hourly Forecast";
+"DailyForecast" = "Daily Forecast";

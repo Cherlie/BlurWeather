@@ -25,5 +25,6 @@
 @property (nonatomic, strong) NSString *icon;
 
 - (NSString *)imageName;
+- (NSString*)backgroundImage;
 
 @end

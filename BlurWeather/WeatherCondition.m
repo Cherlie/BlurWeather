@@ -103,6 +103,54 @@
              };
 }
 
+- (NSString*)backgroundImage {
+    @try {
+        return [WeatherCondition backgroundMap][self.icon];
+    }
+    @catch (NSException *exception) {
+        return @"bg";
+    }
+}
+
++ (NSDictionary*)backgroundMap {
+    return  @{
+              @"01d" : @"bg",
+              @"02d" : @"bg",
+              @"03d" : @"bg",
+              @"04d" : @"day-broken-weather",
+              @"09d" : @"day-rain-weather",
+              @"10d" : @"day-rain-weather",
+              @"11d" : @"day-rain-weather",
+              @"13d" : @"day-snow-weather",
+              @"50d" : @"day-mist-weather",
+              @"01n" : @"night-moon-weather",
+              @"02n" : @"night-moon-weather",
+              @"03n" : @"night-moon-weather",
+              @"04n" : @"night-rain-weather",
+              @"09n" : @"night-rain-weather",
+              @"10n" : @"night-rain-weather",
+              @"11n" : @"night-rain-weather",
+              @"13n" : @"night-snow-weather",
+              @"50n" : @"night-moon-weather"
+              };
+}
+
++ (NSValueTransformer*)temperatureJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSNumber* value, BOOL *success, NSError *__autoreleasing *error) {
+        return @(value.floatValue - 273.0);
+    } reverseBlock:^id(NSNumber* value, BOOL *success, NSError *__autoreleasing *error) {
+        return @(value.floatValue + 273.0);
+    }];
+}
+
++ (NSValueTransformer*)tempHighJSONTransformer {
+    return [self temperatureJSONTransformer];
+}
+
++ (NSValueTransformer*)tempLowJSONTransformer {
+    return [self temperatureJSONTransformer];
+}
+
 - (NSString *)imageName {
     return [WeatherCondition imageMap][self.icon];
 }

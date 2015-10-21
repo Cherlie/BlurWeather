@@ -36,7 +36,5 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
-	<key>CFBundleDisplayName</key>
-	<string>Blur Weather</string>
 </dict>
 </plist>
