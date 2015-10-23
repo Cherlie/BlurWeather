@@ -136,10 +136,21 @@
 }
 
 + (NSValueTransformer*)temperatureJSONTransformer {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL isFahrenheit = [defaults boolForKey:@"tempFormat"];
+    
     return [MTLValueTransformer transformerUsingForwardBlock:^id(NSNumber* value, BOOL *success, NSError *__autoreleasing *error) {
-        return @(value.floatValue - 273.0);
+        if (!isFahrenheit) {
+            return @(value.floatValue - 273.0);
+        } else {
+            return @(9 / 5 * (value.floatValue - 273.0) + 32);
+        }
     } reverseBlock:^id(NSNumber* value, BOOL *success, NSError *__autoreleasing *error) {
-        return @(value.floatValue + 273.0);
+        if (!isFahrenheit) {
+            return @(value.floatValue + 273.0);
+        } else {
+            return @((value.floatValue - 32) * (5 / 9) +273.0);
+        }
     }];
 }
 

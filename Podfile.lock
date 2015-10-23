@@ -1,5 +1,6 @@
 PODS:
   - HexColors (2.2.1)
+  - JTHamburgerButton (1.0.5)
   - LBBlurredImage (0.2.2)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
@@ -15,6 +16,7 @@ PODS:
     - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
+  - JTHamburgerButton
   - LBBlurredImage
   - Mantle
   - ReactiveCocoa
@@ -22,6 +24,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  JTHamburgerButton: 9a41c7d051c72590a9d2c18416d84d1b912f12e3
   LBBlurredImage: 700634c17922bc2d22343118e7deb6a3ca12db43
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a

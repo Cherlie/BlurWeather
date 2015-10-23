@@ -1,0 +1,16 @@
+/* 
+  Localization.strings
+  BlurWeather
+
+  Created by koudai_hs on 15-10-21.
+  Copyright (c) 2015年 Charles Wang. All rights reserved.
+*/
+
+"Hourly Forecast" = "Hourly Forecast";
+"Daily Forecast" = "Daily Forecast";
+"settings" = "Settings";
+"about" = "About";
+"tempScale" = "Temperature Scale";
+"Auto Refresh" = "Auto Refresh";
+"off" = "OFF";
+"on" = "ON";

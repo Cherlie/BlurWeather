@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import <UIImageView+LBBlurredImage.h>
 #import "WeatherManager.h"
+#import <JTHamburgerButton.h>
+#import "NirKxMenu.h"
+#import "SettingsViewController.h"
+#import "AboutViewController.h"
 
 @interface ViewController ()
 
@@ -20,9 +24,15 @@
 @property (nonatomic, strong) NSDateFormatter *hourlyFormatter;
 @property (nonatomic, strong) NSDateFormatter *dailyFormatter;
 
+@property (strong, nonatomic)JTHamburgerButton* hamburgerButton;
+@property (strong, nonatomic)NSArray* menuArray;
+@property OptionalConfiguration options;
+
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSTimer* timer;
+}
 
 - (id)init{
     if (self = [super init]) {
@@ -112,6 +122,49 @@
     cityLabel.textAlignment = NSTextAlignmentCenter;
     [header addSubview:cityLabel];
     
+    //配置弹出菜单
+    self.menuArray = @[
+                       [KxMenuItem menuItem:NSLocalizedString(@"settings",nil) image:[UIImage imageNamed:@"settings"] target:self action:@selector(settingsClick)],
+                       [KxMenuItem menuItem:NSLocalizedString(@"about",nil) image:[UIImage imageNamed:@"about"] target:self action:@selector(aboutClick)]
+                       ];
+    [KxMenu setTitleFont:[UIFont fontWithName:@"HelveticaNeue" size:15]];
+    
+    OptionalConfiguration op;
+    op.arrowSize = 9;  //指示箭头大小
+    op.marginXSpacing = 7;  //MenuItem左右边距
+    op.marginYSpacing = 9;  //MenuItem上下边距
+    op.intervalSpacing = 25;  //MenuItemImage与MenuItemTitle的间距
+    op.menuCornerRadius = 6.5;  //菜单圆角半径
+    op.maskToBackground = true;  //是否添加覆盖在原View上的半透明遮罩
+    op.shadowOfMenu = false;  //是否添加菜单阴影
+    op.hasSeperatorLine = true;  //是否设置分割线
+    op.seperatorLineHasInsets = false;  //是否在分割线两侧留下Insets
+    Color color;
+    color.R = 0;
+    color.G = 0;
+    color.B = 0;
+    op.textColor = color;
+    Color bgColor;
+    bgColor.R = 1;
+    bgColor.G = 1;
+    bgColor.B = 1;
+    op.menuBackgroundColor = bgColor;
+    self.options = op;
+
+    //添加汉堡菜单
+    self.hamburgerButton = [[JTHamburgerButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 50, 20, 30, 30)];
+    [[self.hamburgerButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(JTHamburgerButton* para) {
+        /*
+        if(para.currentMode == JTHamburgerButtonModeHamburger){
+            [para setCurrentModeWithAnimation:JTHamburgerButtonModeArrow];
+        }
+        else{
+            [para setCurrentModeWithAnimation:JTHamburgerButtonModeHamburger];
+        }*/
+        [KxMenu showMenuInView:self.view fromRect:para.frame menuItems:self.menuArray withOptions:self.options];
+    }];
+    [header addSubview:self.hamburgerButton];
+    
     UILabel *conditionsLabel = [[UILabel alloc] initWithFrame:conditionsFrame];
     conditionsLabel.backgroundColor = [UIColor clearColor];
     conditionsLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
@@ -123,7 +176,7 @@
     iconView.contentMode = UIViewContentModeScaleAspectFit; 
     iconView.backgroundColor = [UIColor clearColor]; 
     [header addSubview:iconView];
-    
+    //绑定数据变化
     [[RACObserve([WeatherManager sharedManager], currentCondition)
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(WeatherCondition *newCondition) {
@@ -139,7 +192,7 @@
         
          iconView.image = [UIImage imageNamed:[newCondition imageName]];
      }];
-    
+    //用RAC绑定温度
     RAC(hiloLabel,text) = [[RACSignal combineLatest:@[
                         RACObserve([WeatherManager sharedManager], currentCondition.tempHigh),
                         RACObserve([WeatherManager sharedManager], currentCondition.tempLow)
@@ -155,8 +208,18 @@
         [self.tableView reloadData];
     }];
     //定时请求数据-30s
-    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:180.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     [timer fire];
+}
+
+- (void)settingsClick{
+    SettingsViewController* settingsViewController = [[SettingsViewController alloc]init];
+    [self.navigationController pushViewController:settingsViewController animated:NO];
+}
+
+- (void)aboutClick{
+    AboutViewController* aboutViewController = [[AboutViewController alloc]init];
+    [self.navigationController pushViewController:aboutViewController animated:NO];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -167,6 +230,19 @@
     self.backgroundImageView.frame = bounds;
     self.blurredImageView.frame = bounds;
     self.tableView.frame = bounds;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    BOOL flag = [defaults boolForKey:@"autoRefresh"];
+    if (flag) {
+        [timer setFireDate:[NSDate date]];
+    }else{
+        [timer setFireDate:[NSDate distantFuture]];
+    }
 }
 
 - (void)timerFired:(id)sender{
@@ -202,14 +278,14 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            [self configureHeaderCell:cell title:NSLocalizedString(@"HourlyForecast",nil)];
+            [self configureHeaderCell:cell title:NSLocalizedString(@"Hourly Forecast",nil)];
         }else{
             WeatherCondition* weather = [WeatherManager sharedManager].hourlyForecast[indexPath.row -1];
             [self configureHourlyCell:cell weather:weather];
         }
     }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
-            [self configureHeaderCell:cell title:NSLocalizedString(@"DailyForecast",nil)];
+            [self configureHeaderCell:cell title:NSLocalizedString(@"Daily Forecast",nil)];
         } else {
             WeatherCondition* weather = [WeatherManager sharedManager].dailyForecast[indexPath.row - 1];
             [self configureDailyCell:cell weather:weather];

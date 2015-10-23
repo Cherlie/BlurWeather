@@ -17,7 +17,13 @@
 		956EA8D11BD0A49C00298D1B /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D01BD0A49C00298D1B /* WeatherManager.m */; };
 		956EA8D41BD0A4BF00298D1B /* WeatherDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D31BD0A4BF00298D1B /* WeatherDailyForecast.m */; };
 		956EA8D81BD0A9E100298D1B /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 956EA8D71BD0A9E100298D1B /* HttpClient.m */; };
-		E77F56A21BD7910E005CFD5B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = E77F56A41BD7910E005CFD5B /* Localization.strings */; };
+		E732FB4C1BD9D7130012A1DB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E732FB461BD9D7130012A1DB /* AboutViewController.m */; };
+		E732FB4D1BD9D7130012A1DB /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E732FB481BD9D7130012A1DB /* SettingsTableViewCell.m */; };
+		E732FB4E1BD9D7130012A1DB /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E732FB491BD9D7130012A1DB /* SettingsTableViewCell.xib */; };
+		E732FB4F1BD9D7130012A1DB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E732FB4B1BD9D7130012A1DB /* SettingsViewController.m */; };
+		E732FB531BD9D7530012A1DB /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E732FB521BD9D7530012A1DB /* NirKxMenu.m */; };
+		E732FB561BD9D7770012A1DB /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = E732FB551BD9D7770012A1DB /* Settings.m */; };
+		E77F56A21BD7910E005CFD5B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E77F56A41BD7910E005CFD5B /* Localizable.strings */; };
 		E77F56B91BD795D5005CFD5B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F56B81BD795D5005CFD5B /* Info.plist */; };
 		E77F56BC1BD7964F005CFD5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E77F56BE1BD7964F005CFD5B /* InfoPlist.strings */; };
 		E7B21E901BD733C400EFB594 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B21E8F1BD733C400EFB594 /* NotificationCenter.framework */; };
@@ -82,12 +88,23 @@
 		956EA8D91BD0C63C00298D1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		956EA8DA1BD0C63C00298D1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		956EA8DB1BD0C63C00298D1B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E77F56A31BD7910E005CFD5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localization.strings; sourceTree = "<group>"; };
-		E77F56A51BD79133005CFD5B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localization.strings"; sourceTree = "<group>"; };
-		E77F56A61BD79140005CFD5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localization.strings"; sourceTree = "<group>"; };
-		E77F56A71BD7914A005CFD5B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
-		E77F56A81BD79157005CFD5B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localization.strings; sourceTree = "<group>"; };
-		E77F56AA1BD79366005CFD5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		E732FB451BD9D7130012A1DB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E732FB461BD9D7130012A1DB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		E732FB471BD9D7130012A1DB /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
+		E732FB481BD9D7130012A1DB /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
+		E732FB491BD9D7130012A1DB /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		E732FB4A1BD9D7130012A1DB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E732FB4B1BD9D7130012A1DB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E732FB511BD9D7530012A1DB /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
+		E732FB521BD9D7530012A1DB /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
+		E732FB541BD9D7770012A1DB /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		E732FB551BD9D7770012A1DB /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		E77F56A31BD7910E005CFD5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E77F56A51BD79133005CFD5B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E77F56A61BD79140005CFD5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E77F56A71BD7914A005CFD5B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E77F56A81BD79157005CFD5B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E77F56AA1BD79366005CFD5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E77F56B81BD795D5005CFD5B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77F56BD1BD7964F005CFD5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E77F56BF1BD79651005CFD5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -164,6 +181,8 @@
 		956EA8A41BD09FB000298D1B /* BlurWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E732FB501BD9D7490012A1DB /* Controls */,
+				E732FB441BD9D6EB0012A1DB /* ViewControllers */,
 				956EA8D51BD0A99A00298D1B /* Services */,
 				956EA8CB1BD0A2BC00298D1B /* Models */,
 				956EA8A91BD09FB000298D1B /* AppDelegate.h */,
@@ -181,7 +200,7 @@
 			children = (
 				E77F56B81BD795D5005CFD5B /* Info.plist */,
 				956EA8A71BD09FB000298D1B /* main.m */,
-				E77F56A41BD7910E005CFD5B /* Localization.strings */,
+				E77F56A41BD7910E005CFD5B /* Localizable.strings */,
 				E77F56BE1BD7964F005CFD5B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -207,6 +226,8 @@
 		956EA8CB1BD0A2BC00298D1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E732FB541BD9D7770012A1DB /* Settings.h */,
+				E732FB551BD9D7770012A1DB /* Settings.m */,
 				956EA8CC1BD0A2E500298D1B /* WeatherCondition.h */,
 				956EA8CD1BD0A2E500298D1B /* WeatherCondition.m */,
 				956EA8CF1BD0A49C00298D1B /* WeatherManager.h */,
@@ -236,6 +257,29 @@
 				E7B21E8F1BD733C400EFB594 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E732FB441BD9D6EB0012A1DB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E732FB451BD9D7130012A1DB /* AboutViewController.h */,
+				E732FB461BD9D7130012A1DB /* AboutViewController.m */,
+				E732FB471BD9D7130012A1DB /* SettingsTableViewCell.h */,
+				E732FB481BD9D7130012A1DB /* SettingsTableViewCell.m */,
+				E732FB491BD9D7130012A1DB /* SettingsTableViewCell.xib */,
+				E732FB4A1BD9D7130012A1DB /* SettingsViewController.h */,
+				E732FB4B1BD9D7130012A1DB /* SettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E732FB501BD9D7490012A1DB /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				E732FB511BD9D7530012A1DB /* NirKxMenu.h */,
+				E732FB521BD9D7530012A1DB /* NirKxMenu.m */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		E7B21E911BD733C400EFB594 /* WeatherWidget */ = {
@@ -369,7 +413,8 @@
 			files = (
 				956EA8B31BD09FB000298D1B /* Images.xcassets in Resources */,
 				E77F56BC1BD7964F005CFD5B /* InfoPlist.strings in Resources */,
-				E77F56A21BD7910E005CFD5B /* Localization.strings in Resources */,
+				E77F56A21BD7910E005CFD5B /* Localizable.strings in Resources */,
+				E732FB4E1BD9D7130012A1DB /* SettingsTableViewCell.xib in Resources */,
 				E77F56B91BD795D5005CFD5B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,11 +491,16 @@
 			files = (
 				956EA8D11BD0A49C00298D1B /* WeatherManager.m in Sources */,
 				956EA8CE1BD0A2E500298D1B /* WeatherCondition.m in Sources */,
+				E732FB561BD9D7770012A1DB /* Settings.m in Sources */,
+				E732FB4C1BD9D7130012A1DB /* AboutViewController.m in Sources */,
 				956EA8AE1BD09FB000298D1B /* ViewController.m in Sources */,
 				956EA8AB1BD09FB000298D1B /* AppDelegate.m in Sources */,
+				E732FB4D1BD9D7130012A1DB /* SettingsTableViewCell.m in Sources */,
 				956EA8A81BD09FB000298D1B /* main.m in Sources */,
+				E732FB4F1BD9D7130012A1DB /* SettingsViewController.m in Sources */,
 				956EA8D81BD0A9E100298D1B /* HttpClient.m in Sources */,
 				956EA8D41BD0A4BF00298D1B /* WeatherDailyForecast.m in Sources */,
+				E732FB531BD9D7530012A1DB /* NirKxMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +536,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E77F56A41BD7910E005CFD5B /* Localization.strings */ = {
+		E77F56A41BD7910E005CFD5B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E77F56A31BD7910E005CFD5B /* Base */,
@@ -496,7 +546,7 @@
 				E77F56A81BD79157005CFD5B /* ja */,
 				E77F56AA1BD79366005CFD5B /* en */,
 			);
-			name = Localization.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		E77F56BE1BD7964F005CFD5B /* InfoPlist.strings */ = {

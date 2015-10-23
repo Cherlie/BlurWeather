@@ -10,4 +10,6 @@
 
 @interface TodayViewController : UIViewController
 
+@property (weak,nonatomic)IBOutlet UILabel* conditionDescript;
+
 @end
